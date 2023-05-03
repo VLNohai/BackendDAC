@@ -44,7 +44,7 @@ function sendEmail(receiver, about, message){
 app.use((req, res, next) => {
   console.log(req.url);
   console.log(req.method);
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+  //res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
   next();
 });
 
@@ -54,8 +54,8 @@ app.get('/search', (req, res) => {
   const encodedSearchTerm = encodeURIComponent(searchTerm);
 
   const options = {
-    hostname: 'localhost',
-    port: 3100,
+    hostname: '3.124.194.175',
+    port: 3000,
     path: '/igdb?term=' + encodedSearchTerm,
     method: 'GET'
   };
@@ -84,8 +84,8 @@ app.get('/cracked', (req, res) => {
   const encodedGameTitle = encodeURIComponent(gameTitle);
 
   const options = {
-    hostname: 'localhost',
-    port: 3100,
+    hostname: '3.124.194.175',
+    port: 3000,
     path: '/filelist?term=' + encodedGameTitle,
     method: 'GET'
   };
@@ -128,8 +128,8 @@ function routineCheck(){
       console.log(game);
       const encodedGameTitle = encodeURIComponent(game.games);
       const options = {
-        hostname: 'localhost',
-        port: 3100,
+        hostname: '3.124.194.175',
+        port: 3000,
         path: '/filelist?term=' + encodedGameTitle,
         method: 'GET'
       };
